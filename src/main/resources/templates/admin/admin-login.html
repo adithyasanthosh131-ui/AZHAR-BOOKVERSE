@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | AZHAR BOOKVERSE</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body class="auth-page ab-login">
+
+    <div class="ab-login-bg"></div>
+
+    <main class="ab-login-container">
+
+        <div class="ab-login-brand">
+            <div class="ab-logo">AB</div>
+            <h1>AZHAR <span>BOOKVERSE</span></h1>
+            <p>YOUR CAMPUS. YOUR KNOWLEDGE. YOUR WORLD.</p>
+        </div>
+
+        <section class="ab-login-card">
+
+            <div class="ab-login-icon">✦</div>
+
+            <span class="ab-eyebrow">ADMINISTRATION PORTAL</span>
+            <h2>Welcome Back!</h2>
+            <p class="ab-login-subtitle">
+                Sign in to manage your college library.
+            </p>
+
+            <div class="ab-error"
+                 th:if="${error}"
+                 th:text="${error}">
+            </div>
+
+            <form th:action="@{/admin/login}" method="post">
+
+                <label for="username">Admin Username</label>
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Enter your username"
+                    autocomplete="username"
+                    required>
+
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    autocomplete="current-password"
+                    required>
+
+                <button type="submit" class="ab-login-button">
+                    Sign In to Admin Portal →
+                </button>
+
+            </form>
+
+            <a th:href="@{/login}" class="ab-back-link">
+                ← Back to Student Login
+            </a>
+
+        </section>
+
+        <footer class="ab-login-footer">
+            © 2026 AZHAR BOOKVERSE · COLLEGE LIBRARY MANAGEMENT
+        </footer>
+
+    </main>
+<script th:src="@{/js/theme.js}"></script>
+</body>
+</html>

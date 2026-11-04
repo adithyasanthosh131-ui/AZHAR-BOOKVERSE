@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login | AZHAR BOOKVERSE</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body class="auth-page">
+
+    <div class="auth-brand">
+        <div class="auth-logo">AB</div>
+        <h1>AZHAR <span>BOOKVERSE</span></h1>
+        <p>YOUR CAMPUS. YOUR KNOWLEDGE. YOUR WORLD.</p>
+    </div>
+
+    <main class="auth-card">
+        <div class="auth-icon">✦</div>
+
+        <p class="auth-label">STUDENT PORTAL</p>
+        <h2>Welcome Back!</h2>
+        <p class="auth-description">Sign in to continue your reading journey.</p>
+
+        <div class="success-message" th:if="${param.registered}">
+            Registration successful! Please login.
+        </div>
+
+        <div class="error-message" th:if="${error}" th:text="${error}"></div>
+
+        <form th:action="@{/login}" method="post">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email"
+                   placeholder="Enter your email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password"
+                   placeholder="Enter your password" required>
+
+            <button type="submit">Sign In to Student Portal →</button>
+        </form>
+
+        <p class="auth-link">
+            Don't have an account?
+            <a th:href="@{/register}">Register Now</a>
+        </p>
+
+        <a class="admin-link" th:href="@{/admin/login}">
+            Admin Login
+        </a>
+    </main>
+
+    <footer class="auth-footer">
+        © 2026 AZHAR BOOKVERSE. Read. Learn. Grow.
+    </footer>
+<script th:src="@{/js/theme.js}"></script>
+</body>
+</html>

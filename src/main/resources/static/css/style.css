@@ -1,0 +1,2885 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f1f3f8;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 950px;
+    min-height: 650px;
+    display: flex;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px #00000015;
+}
+
+.left-section {
+    width: 42%;
+    background: linear-gradient(140deg, #101d3b, #28527d);
+    color: white;
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.left-section h1 {
+    font-size: 28px;
+}
+
+.left-section h2 {
+    font-size: 38px;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.left-section p {
+    color: #d6dfeb;
+    line-height: 1.7;
+}
+
+.right-section {
+    width: 58%;
+    padding: 35px 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-box {
+    width: 100%;
+    max-width: 390px;
+}
+
+.form-box h2 {
+    color: #172b4d;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.form-box > p {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 7px;
+    color: #26344c;
+}
+
+input, select {
+    width: 100%;
+    padding: 11px;
+    margin-bottom: 14px;
+    border: 1px solid #dce1ea;
+    border-radius: 7px;
+    outline: none;
+    background: #fbfcfe;
+}
+
+input:focus, select:focus {
+    border-color: #3479b8;
+}
+
+button {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 7px;
+    background: #1e4775;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #15365c;
+}
+
+.login-text {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-text a {
+    color: #1e4775;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+@media(max-width:750px) {
+    .left-section {
+        display: none;
+    }
+
+    .right-section {
+        width: 100%;
+        padding: 25px;
+    }
+
+    .container {
+        width: 100%;
+    }
+}
+.error {
+    color: #c62828 !important;
+    background: #ffeded;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+/* =====================================
+   AZHAR BOOKVERSE - ORANGE ADMIN THEME
+===================================== */
+
+:root {
+    --ab-orange: #f07824;
+    --ab-dark: #29231f;
+    --ab-cream: #fff8f0;
+    --ab-white: #ffffff;
+    --ab-muted: #8c8580;
+    --ab-border: #f0e8df;
+}
+
+.ab-admin,
+.ab-login {
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* ADMIN LOGIN */
+
+.ab-login {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fff8f0, #ffead8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 18px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ab-login-bg {
+    position: fixed;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: #ffbd86;
+    opacity: .16;
+    filter: blur(3px);
+    right: -150px;
+    top: -150px;
+}
+
+.ab-login-container {
+    width: 100%;
+    max-width: 440px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    animation: abFadeUp .7s ease;
+}
+
+.ab-login-brand {
+    margin-bottom: 25px;
+}
+
+.ab-logo {
+    width: 58px;
+    height: 58px;
+    background: linear-gradient(135deg, #ff9b45, #e65e12);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 17px;
+    font-size: 21px;
+    font-weight: 800;
+    box-shadow: 0 8px 20px #f0782440;
+}
+
+.ab-login-brand .ab-logo {
+    margin: 0 auto 14px;
+}
+
+.ab-login-brand h1 {
+    font-size: 25px;
+    color: var(--ab-dark);
+    letter-spacing: 1px;
+}
+
+.ab-login-brand h1 span,
+.ab-sidebar-brand h2 span {
+    color: var(--ab-orange);
+}
+
+.ab-login-brand p {
+    color: var(--ab-muted);
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-top: 8px;
+}
+
+.ab-login-card {
+    background: white;
+    padding: 38px;
+    border-radius: 22px;
+    text-align: left;
+    box-shadow: 0 18px 55px #8c4a1815;
+    border: 1px solid #ffffff;
+}
+
+.ab-login-icon {
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    background: #fff0e2;
+    color: var(--ab-orange);
+    border-radius: 14px;
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+
+.ab-eyebrow {
+    color: var(--ab-orange);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+}
+
+.ab-login-card h2 {
+    color: var(--ab-dark);
+    font-size: 29px;
+    margin: 9px 0;
+}
+
+.ab-login-subtitle {
+    color: var(--ab-muted);
+    font-size: 13px;
+    margin-bottom: 27px;
+}
+
+.ab-login-card label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 18px 0 8px;
+    color: var(--ab-dark);
+}
+
+.ab-login-card input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--ab-border);
+    background: #fffcf9;
+    border-radius: 10px;
+    outline: none;
+    font-size: 13px;
+    box-sizing: border-box;
+    transition: .25s;
+}
+
+.ab-login-card input:focus {
+    border-color: var(--ab-orange);
+    box-shadow: 0 0 0 3px #f0782418;
+}
+
+.ab-login-button {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 25px;
+    background: linear-gradient(100deg, #f58b35, #e96216);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.ab-login-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px #f0782440;
+}
+
+.ab-back-link {
+    display: block;
+    text-align: center;
+    margin-top: 22px;
+    color: #b75b20;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.ab-back-link:hover {
+    text-decoration: underline;
+}
+
+.ab-error {
+    padding: 12px;
+    color: #b42318;
+    background: #fff0ed;
+    border-radius: 8px;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.ab-login-footer {
+    color: #96877b;
+    font-size: 10px;
+    margin-top: 25px;
+}
+
+/* ADMIN DASHBOARD */
+
+.ab-admin {
+    display: flex;
+    min-height: 100vh;
+    background: #fffaf5;
+    color: var(--ab-dark);
+}
+
+.ab-sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    background: #ffffff;
+    border-right: 1px solid var(--ab-border);
+    padding: 25px 17px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+}
+
+.ab-sidebar-brand {
+    padding: 5px 10px 28px;
+    border-bottom: 1px solid var(--ab-border);
+}
+
+.ab-sidebar-brand .ab-logo {
+    margin-bottom: 13px;
+}
+
+.ab-sidebar-brand h2 {
+    font-size: 16px;
+    letter-spacing: .3px;
+}
+
+.ab-sidebar-brand small {
+    display: block;
+    color: var(--ab-muted);
+    letter-spacing: 2px;
+    font-size: 9px;
+    margin-top: 8px;
+}
+
+.ab-nav-label {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #aaa09a;
+    margin: 28px 10px 12px;
+}
+
+.ab-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.ab-nav a {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 13px 12px;
+    text-decoration: none;
+    color: #726b65;
+    font-size: 13px;
+    border-radius: 10px;
+    transition: .25s;
+}
+
+.ab-nav a span {
+    font-size: 19px;
+    color: var(--ab-orange);
+    width: 22px;
+    text-align: center;
+}
+
+.ab-nav a:hover,
+.ab-nav a.active {
+    background: #fff0e2;
+    color: #d85d15;
+}
+
+.ab-sidebar-bottom {
+    margin-top: auto;
+    padding-top: 25px;
+}
+
+.ab-admin-mini {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 5px;
+    border-top: 1px solid var(--ab-border);
+}
+
+.ab-admin-mini strong,
+.ab-admin-mini small {
+    display: block;
+}
+
+.ab-admin-mini strong {
+    font-size: 12px;
+}
+
+.ab-admin-mini small {
+    font-size: 10px;
+    color: var(--ab-muted);
+    margin-top: 4px;
+}
+
+.ab-avatar {
+    width: 39px;
+    height: 39px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #ffe5d0;
+    color: #d95e17;
+    font-weight: 800;
+}
+
+.ab-sidebar .logout-link {
+    display: block;
+    padding: 12px;
+    color: #cf5d31;
+    font-size: 13px;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.ab-sidebar .logout-link:hover {
+    background: #fff0e9;
+}
+
+/* MAIN CONTENT */
+
+.ab-main {
+    flex: 1;
+    min-width: 0;
+    padding: 32px 38px;
+    box-sizing: border-box;
+}
+
+.ab-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 28px;
+}
+
+.ab-header h1 {
+    font-size: 27px;
+    margin: 9px 0;
+}
+
+.ab-header p {
+    font-size: 13px;
+    color: var(--ab-muted);
+}
+
+.ab-header-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.ab-date {
+    padding: 11px 15px;
+    border-radius: 10px;
+    background: white;
+    border: 1px solid var(--ab-border);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* HERO */
+
+.ab-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 230px;
+    padding: 30px;
+    border-radius: 20px;
+    background: linear-gradient(115deg, #fff0df, #ffe0c3);
+    overflow: hidden;
+    box-sizing: border-box;
+    margin-bottom: 32px;
+}
+
+.ab-hero-text {
+    flex: 1;
+}
+
+.ab-hero-tag {
+    color: #bd601f;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.ab-hero h2 {
+    font-size: 30px;
+    line-height: 1.25;
+    color: #38271c;
+    margin: 15px 0;
+}
+
+.ab-hero h2 span {
+    color: #e66c1c;
+}
+
+.ab-hero p {
+    font-size: 12px;
+    color: #826b59;
+    line-height: 1.8;
+    max-width: 420px;
+}
+
+.ab-hero-button {
+    display: inline-block;
+    background: #e96d20;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 9px;
+    margin-top: 14px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.ab-hero-button:hover {
+    background: #c84f0d;
+    transform: translateY(-3px);
+}
+
+.ab-hero-image {
+    width: 35%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.ab-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.ab-hero-image img:hover {
+    transform: scale(1.06);
+}
+
+/* STATISTICS */
+
+.ab-section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px 0 17px;
+}
+
+.ab-section-heading h2 {
+    font-size: 20px;
+    margin-top: 7px;
+}
+
+.ab-live {
+    font-size: 10px;
+    font-weight: 800;
+    color: #379a64;
+}
+
+.ab-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 17px;
+}
+
+.ab-stat {
+    padding: 21px;
+    border: 1px solid var(--ab-border);
+    background: white;
+    border-radius: 15px;
+    transition: .3s;
+    animation: abFadeUp .6s ease both;
+}
+
+.ab-stat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px #6c3a1510;
+    border-color: #f6c59f;
+}
+
+.ab-stat-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: #766e68;
+}
+
+.ab-stat-icon {
+    width: 37px;
+    height: 37px;
+    display: grid;
+    place-items: center;
+    border-radius: 11px;
+    background: #fff0e2;
+    color: #e66c1c;
+    font-size: 19px;
+}
+
+.ab-stat h2 {
+    font-size: 32px;
+    margin: 17px 0 5px;
+    color: #302720;
+}
+
+.ab-stat p {
+    color: #a09891;
+    font-size: 11px;
+}
+
+.ab-overdue .ab-stat-icon {
+    background: #fff0ed;
+    color: #d94b3f;
+}
+
+.ab-overdue h2 {
+    color: #d94b3f;
+}
+
+/* QUICK ACTIONS */
+
+.ab-actions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.ab-action {
+    display: block;
+    padding: 21px;
+    text-decoration: none;
+    background: white;
+    border: 1px solid var(--ab-border);
+    border-radius: 15px;
+    transition: .3s;
+}
+
+.ab-action:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px #6c3a1510;
+    border-color: #f5b27e;
+}
+
+.ab-action-icon {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    background: #fff0e2;
+    border-radius: 12px;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.ab-action h3 {
+    font-size: 14px;
+    color: #342a23;
+    margin-bottom: 8px;
+}
+
+.ab-action p {
+    font-size: 11px;
+    color: #938981;
+    line-height: 1.7;
+    min-height: 37px;
+}
+
+.ab-action > span {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 11px;
+    font-weight: 800;
+    color: #e66c1c;
+}
+
+.ab-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 35px;
+    padding: 20px 0;
+    border-top: 1px solid var(--ab-border);
+    color: #a0968e;
+    font-size: 10px;
+}
+
+/* ANIMATIONS */
+
+@keyframes abFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+    .ab-main {
+        padding: 25px 20px;
+    }
+
+    .ab-stats,
+    .ab-actions {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .ab-admin {
+        display: block;
+    }
+
+    .ab-sidebar {
+        width: 100%;
+        min-height: auto;
+        position: relative;
+        padding: 15px;
+    }
+
+    .ab-sidebar-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding-bottom: 15px;
+    }
+
+    .ab-sidebar-brand .ab-logo {
+        margin: 0;
+    }
+
+    .ab-sidebar-brand small {
+        display: none;
+    }
+
+    .ab-nav-label {
+        margin-top: 15px;
+    }
+
+    .ab-nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ab-nav a {
+        padding: 10px 7px;
+        font-size: 11px;
+    }
+
+    .ab-sidebar-bottom {
+        margin-top: 10px;
+        padding-top: 10px;
+    }
+
+    .ab-main {
+        padding: 22px 15px;
+    }
+
+    .ab-header h1 {
+        font-size: 21px;
+    }
+
+    .ab-date {
+        display: none;
+    }
+
+    .ab-hero {
+        padding: 22px;
+    }
+
+    .ab-hero h2 {
+        font-size: 23px;
+    }
+
+    .ab-hero-image {
+        display: none;
+    }
+
+    .ab-stats,
+    .ab-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .ab-footer {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 420px) {
+    .ab-login-card {
+        padding: 25px 20px;
+    }
+
+    .ab-header-right {
+        display: none;
+    }
+}
+.error-message {
+    color: #dc2626;
+    background: #fee2e2;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.success-message {
+    color: #15803d;
+    background: #dcfce7;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.form-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-box input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 18px;
+}
+
+.form-box button {
+    width: 100%;
+    cursor: pointer;
+}
+
+.login-text {
+    text-align: center;
+    margin-top: 22px;
+}
+
+.login-text a {
+    color: #204875;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-text a:hover {
+    text-decoration: underline;
+}
+/* =====================================
+   AZHAR BOOKVERSE - STUDENT AUTH THEME
+   ===================================== */
+
+.auth-page {
+    min-height: 100vh;
+    margin: 0;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, #fff8ef, #fff0e3);
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #202020;
+}
+
+.auth-brand {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-logo {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 17px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #ff963e, #ed5b0b);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    font-weight: 800;
+    box-shadow: 0 10px 25px rgba(237, 91, 11, 0.2);
+}
+
+.auth-brand h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.auth-brand h1 span {
+    color: #f47721;
+}
+
+.auth-brand p {
+    margin-top: 9px;
+    color: #89827e;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.auth-card {
+    width: 100% !important;
+    max-width: 550px !important;
+    box-sizing: border-box;
+    background: #ffffff;
+    padding: 48px;
+    border-radius: 26px;
+    box-shadow: 0 20px 60px rgba(120, 75, 40, 0.10);
+    animation: authAppear 0.6s ease;
+}
+
+.auth-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 17px;
+    background: #fff0e3;
+    color: #f47721;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    margin-bottom: 28px;
+}
+
+.auth-label {
+    color: #f47721;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.auth-card h2 {
+    font-size: 36px;
+    margin: 0 0 12px;
+    color: #222222;
+}
+
+.auth-description {
+    color: #88817c;
+    font-size: 15px;
+    margin-bottom: 32px;
+}
+
+.auth-card form {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-card form label {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 10px;
+    color: #252525;
+}
+
+.auth-card form input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 17px;
+    margin-bottom: 25px;
+    border: 1px solid #eee3d4;
+    border-radius: 13px;
+    background: #fffbcf;
+    font-size: 15px;
+    outline: none;
+    transition: 0.25s;
+}
+
+.auth-card form input:focus {
+    border-color: #f47721;
+    box-shadow: 0 0 0 3px rgba(244, 119, 33, 0.12);
+}
+
+.auth-card form button {
+    width: 100%;
+    padding: 18px;
+    border: none;
+    border-radius: 13px;
+    background: linear-gradient(100deg, #fa8730, #ed5b0b);
+    color: white;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: 0.25s;
+}
+
+.auth-card form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(237, 91, 11, 0.22);
+}
+
+.auth-link {
+    text-align: center;
+    margin-top: 28px;
+    color: #817a75;
+    font-size: 14px;
+}
+
+.auth-link a,
+.admin-link {
+    color: #ed650f;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.auth-link a:hover,
+.admin-link:hover {
+    text-decoration: underline;
+}
+
+.admin-link {
+    display: block;
+    text-align: center;
+    margin-top: 22px;
+    font-size: 14px;
+}
+
+.auth-card .error-message {
+    background: #ffe7e5;
+    color: #b42318;
+    padding: 13px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.auth-card .success-message {
+    background: #e0f8e9;
+    color: #167443;
+    padding: 13px;
+    border-radius: 10px;
+    margin-bottom: 22px;
+    font-size: 14px;
+}
+
+.register-card {
+    max-width: 550px;
+}
+
+.auth-footer {
+    margin-top: 28px;
+    text-align: center;
+    color: #99918b;
+    font-size: 12px;
+}
+
+@keyframes authAppear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .auth-page {
+        padding: 22px 14px;
+    }
+
+    .auth-brand h1 {
+        font-size: 25px;
+    }
+
+    .auth-brand p {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .auth-card {
+        padding: 30px 23px;
+    }
+
+    .auth-card h2 {
+        font-size: 29px;
+    }
+}
+.auth-page {
+    min-height: 100vh;
+    height: auto;
+    overflow-x: hidden;
+    justify-content: flex-start;
+}
+
+.auth-brand {
+    flex-shrink: 0;
+    margin-top: 7px;
+    margin-bottom: 30px;
+}
+
+.auth-card {
+    flex-shrink: 0;
+}
+
+.auth-footer {
+    padding-bottom: 15px;
+}
+/* AZHAR BOOKVERSE STUDENT DASHBOARD */
+
+.student-dashboard {
+    min-height: 100vh;
+    margin: 0;
+    background: #fff7ee;
+    font-family: Arial, sans-serif;
+    color: #252525;
+}
+
+.student-header {
+    background: white;
+    padding: 20px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+}
+
+.student-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.student-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #ff963e, #ed5b0b);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.student-brand h2 {
+    margin: 0;
+    font-size: 21px;
+}
+
+.student-brand h2 span {
+    color: #f47721;
+}
+
+.student-brand small {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.student-logout {
+    background: #fff0e3;
+    color: #ed650f;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.student-main {
+    width: 88%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+.student-welcome {
+    background: linear-gradient(110deg, #ff963e, #ed5b0b);
+    color: white;
+    padding: 42px;
+    border-radius: 22px;
+    margin-bottom: 28px;
+    box-shadow: 0 12px 30px rgba(237,91,11,0.13);
+}
+
+.student-welcome p:first-child {
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.student-welcome h1 {
+    font-size: 34px;
+    margin: 15px 0;
+}
+
+.student-welcome p:last-child {
+    line-height: 1.6;
+}
+
+.student-profile,
+.student-actions {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 28px;
+    box-shadow: 0 8px 30px rgba(100,60,30,0.06);
+}
+
+.student-profile h2,
+.student-actions h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.profile-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.profile-details small {
+    color: #999;
+}
+
+.profile-details p {
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.student-action-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.student-action-card {
+    display: block;
+    padding: 28px;
+    border: 1px solid #f5e6d8;
+    border-radius: 17px;
+    text-decoration: none;
+    color: #252525;
+    transition: 0.25s;
+}
+
+.student-action-card:hover {
+    transform: translateY(-5px);
+    border-color: #f47721;
+    box-shadow: 0 10px 25px rgba(237,91,11,0.10);
+}
+
+.student-action-card span {
+    font-size: 34px;
+}
+
+.student-action-card h3 {
+    margin-bottom: 8px;
+}
+
+.student-action-card p {
+    color: #888;
+    line-height: 1.6;
+}
+
+.student-action-card strong {
+    color: #ed650f;
+}
+
+@media (max-width: 650px) {
+    .student-header {
+        padding: 15px;
+    }
+
+    .student-brand h2 {
+        font-size: 16px;
+    }
+
+    .student-brand small {
+        display: none;
+    }
+
+    .student-main {
+        width: 92%;
+        margin: 25px auto;
+    }
+
+    .student-welcome {
+        padding: 25px;
+    }
+
+    .student-welcome h1 {
+        font-size: 26px;
+    }
+
+    .profile-details,
+    .student-action-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* FIX STUDENT DASHBOARD LAYOUT */
+
+body.student-dashboard {
+    display: block !important;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.student-header {
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.student-main {
+    display: block;
+    width: 88%;
+    max-width: 1100px;
+    margin: 40px auto;
+    box-sizing: border-box;
+}
+
+.student-welcome,
+.student-profile,
+.student-actions {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.auth-footer {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 25px;
+    margin: 0;
+}
+/* STUDENT BOOK CATALOGUE */
+
+.student-nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.student-nav > a:not(.student-logout) {
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.catalogue-section {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(100,60,30,0.06);
+}
+.book-search {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.book-search input {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    padding: 15px;
+    border: 1px solid #f0dfd0;
+    border-radius: 10px;
+    background: #fffbea;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+.book-search button {
+    flex: 0 0 auto;
+    width: auto;
+    padding: 15px 28px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(110deg, #ff963e, #ed5b0b);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.borrow-button,
+.return-button {
+    border: none;
+    border-radius: 10px;
+    padding: 13px 20px;
+    background: linear-gradient(110deg, #ff963e, #ed5b0b);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+ 
+
+.clear-search {
+    display: flex;
+    align-items: center;
+    color: #ed650f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 22px;
+}
+
+.book-card {
+    overflow: hidden;
+    border: 1px solid #f4e4d8;
+    border-radius: 16px;
+    background: white;
+    transition: 0.25s;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(237,91,11,0.10);
+}
+
+.book-cover {
+    height: 190px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff3e8;
+    overflow: hidden;
+}
+
+.book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.book-cover span {
+    font-size: 65px;
+}
+
+.book-info {
+    padding: 20px;
+}
+
+.book-category {
+    color: #ed650f;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.book-info h3 {
+    margin-bottom: 8px;
+}
+
+.book-author {
+    color: #888;
+}
+
+.book-availability {
+    margin: 18px 0;
+    color: #555;
+}
+
+.book-availability strong {
+    color: #22864c;
+}
+
+.borrow-button {
+    width: 100%;
+}
+
+.unavailable-button {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+.book-message {
+    padding: 13px;
+    background: #fff0e8;
+    color: #bd4d16;
+    border-radius: 8px;
+}
+
+.empty-books {
+    text-align: center;
+    padding: 50px 15px;
+}
+
+.empty-books span {
+    font-size: 55px;
+}
+
+.empty-books p {
+    color: #888;
+}
+
+.catalogue-link {
+    display: inline-block;
+    padding: 13px 22px;
+    background: #f47721;
+    color: white;
+    text-decoration: none;
+    border-radius: 9px;
+    font-weight: bold;
+}
+
+.borrowed-list {
+    display: grid;
+    gap: 18px;
+}
+
+.borrowed-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 22px;
+    border: 1px solid #f4e4d8;
+    border-radius: 15px;
+}
+
+.borrowed-book-icon {
+    font-size: 42px;
+    background: #fff3e8;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.borrowed-book-info {
+    flex: 1;
+}
+
+.borrowed-book-info h3 {
+    margin-top: 0;
+}
+
+.borrowed-book-info p {
+    color: #777;
+    margin: 7px 0;
+}
+
+.borrow-status {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: #fff0df;
+    color: #d96516;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.returned-status {
+    background: #e4f7e9;
+    color: #21864c;
+}
+
+.return-button {
+    background: #258653;
+}
+
+@media (max-width: 650px) {
+    .student-nav {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .student-nav > a:not(.student-logout) {
+        font-size: 12px;
+    }
+
+    .book-search {
+        flex-wrap: wrap;
+    }
+
+    .book-search input {
+        flex-basis: 100%;
+    }
+
+    .borrowed-card {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+}
+.book-cover {
+    width: 100%;
+    height: 220px;
+    background: #fff3e8;
+    overflow: hidden;
+}
+
+.book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+/* BOOK CATALOGUE DISPLAY FIX */
+
+.book-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 22px;
+    width: 100%;
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+    background: white;
+    overflow: hidden;
+}
+
+.book-cover {
+    width: 100%;
+    height: 220px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff3e8;
+}
+
+.book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.book-info {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.book-info h3 {
+    margin: 10px 0;
+    color: #29231f;
+}
+
+/* =====================================
+   AZHAR BOOKVERSE - ADMIN PANEL DESIGN
+===================================== */
+
+body.admin-page {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    background: #fff7ef;
+    color: #292929;
+    font-family: Arial, sans-serif;
+}
+
+/* Sidebar */
+.admin-page .sidebar {
+    width: 260px;
+    min-width: 260px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 30px 20px;
+    background: #252525;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.sidebar-brand {
+    margin-bottom: 45px;
+}
+
+.brand-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ff963d, #f0520b);
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 14px;
+}
+
+.sidebar-brand h2 {
+    margin: 0;
+    font-size: 20px;
+    color: white;
+}
+
+.sidebar-brand h2 span {
+    color: #ff963d;
+}
+
+.sidebar-brand small {
+    display: block;
+    margin-top: 8px;
+    color: #bdbdbd;
+    letter-spacing: 2px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar-nav a,
+.logout-link {
+    display: block;
+    padding: 13px 15px;
+    border-radius: 9px;
+    color: #e8e8e8;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+    background: linear-gradient(100deg, #ff963d, #f0520b);
+    color: white;
+}
+
+.logout-link {
+    margin-top: auto;
+    background: #3a3030;
+    color: #ffb18a;
+}
+
+/* Main content */
+.admin-page .admin-content {
+    flex: 1;
+    min-width: 0;
+    padding: 45px;
+    box-sizing: border-box;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.admin-header .eyebrow {
+    color: #f15b16;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.admin-header h1 {
+    margin: 10px 0;
+    font-size: 34px;
+    color: #292929;
+}
+
+.admin-header p {
+    margin: 0;
+    color: #777;
+    font-size: 15px;
+}
+
+/* Content panels */
+.welcome-panel {
+    background: white;
+    border: 1px solid #f4e3d5;
+    border-radius: 16px;
+    padding: 25px 28px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 25px rgba(100, 55, 20, 0.05);
+}
+
+.welcome-panel h2 {
+    margin: 0 0 10px;
+    font-size: 22px;
+}
+
+.welcome-panel p {
+    margin: 0;
+    color: #777;
+}
+
+/* Tables */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    background: white;
+    border: 1px solid #f1e2d6;
+    border-radius: 15px;
+    padding: 8px;
+    box-sizing: border-box;
+    box-shadow: 0 8px 25px rgba(100, 55, 20, 0.05);
+}
+
+.admin-table {
+    width: 100%;
+    min-width: 700px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.admin-table th {
+    padding: 17px 15px;
+    background: #fff0e3;
+    color: #a8430c;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.admin-table td {
+    padding: 16px 15px;
+    border-bottom: 1px solid #f1e8e1;
+    font-size: 14px;
+    color: #444;
+}
+
+.admin-table tbody tr:hover {
+    background: #fffaf5;
+}
+
+.admin-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.empty-message {
+    text-align: center;
+    padding: 35px !important;
+    color: #888 !important;
+}
+
+/* Status labels */
+.status-badge {
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-badge.returned {
+    background: #e4f7e9;
+    color: #218344;
+}
+
+.status-badge.borrowed {
+    background: #fff0d9;
+    color: #b76a08;
+}
+
+/* Buttons and links */
+.admin-page button,
+.admin-page .edit-btn,
+.admin-page .back-link {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    background: linear-gradient(100deg, #ff963d, #f0520b);
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.admin-page button:hover,
+.admin-page .edit-btn:hover {
+    filter: brightness(0.94);
+}
+
+.admin-page .back-link {
+    display: inline-block;
+    margin-top: 25px;
+}
+
+.admin-page a:not(.sidebar-nav a):not(.logout-link):not(.back-link) {
+    color: #ed5b16;
+}
+
+/* Responsive layout */
+@media (max-width: 850px) {
+    body.admin-page {
+        display: block;
+    }
+
+    .admin-page .sidebar {
+        width: 100%;
+        min-width: 0;
+        min-height: auto;
+        height: auto;
+        position: relative;
+    }
+
+    .sidebar-nav {
+        gap: 5px;
+    }
+
+    .admin-page .admin-content {
+        padding: 22px 15px;
+    }
+
+    .admin-header h1 {
+        font-size: 27px;
+    }
+}
+
+.admin-form {
+    max-width: 650px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.admin-form label {
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.admin-form input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px;
+    border: 1px solid #ead8c8;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.admin-form input:focus {
+    outline: none;
+    border-color: #f36b16;
+}
+
+.edit-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff963b, #f05b0b);
+    color: white;
+    padding: 11px 20px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 12px;
+}
+
+/* =====================================
+   AZHAR BOOKVERSE - CREATIVE ANIMATIONS
+===================================== */
+
+/* Smooth page entrance */
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.admin-content,
+.student-main {
+    animation: pageEnter 0.7s ease-out both;
+}
+
+/* Sidebar entrance */
+@keyframes sidebarEnter {
+    from {
+        opacity: 0;
+        transform: translateX(-25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.sidebar {
+    animation: sidebarEnter 0.6s ease-out both;
+}
+
+/* Sidebar link hover */
+.sidebar-nav a {
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        padding-left 0.3s ease;
+}
+
+.sidebar-nav a:hover {
+    transform: translateX(7px);
+    padding-left: 22px;
+    background: rgba(255, 145, 55, 0.14);
+    color: #f36b16;
+}
+
+.sidebar-nav a.active {
+    transition: all 0.3s ease;
+}
+
+/* Header animation */
+.admin-header,
+.student-welcome {
+    animation: pageEnter 0.8s ease-out both;
+}
+
+/* Book cards */
+.book-card {
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+    animation: pageEnter 0.6s ease both;
+}
+
+.book-card:hover {
+    transform: translateY(-9px);
+    box-shadow: 0 18px 35px rgba(220, 105, 35, 0.16);
+}
+
+.book-cover img {
+    transition: transform 0.5s ease;
+}
+
+.book-card:hover .book-cover img {
+    transform: scale(1.06);
+}
+
+/* Table animation */
+.admin-table tbody tr {
+    animation: pageEnter 0.45s ease both;
+    transition: background 0.25s ease;
+}
+
+.admin-table tbody tr:hover {
+    background: #fff2e7;
+}
+
+/* Buttons */
+button,
+.edit-btn,
+.borrow-button,
+.return-button {
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+}
+
+button:hover,
+.edit-btn:hover,
+.borrow-button:hover,
+.return-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(240, 91, 11, 0.22);
+    filter: brightness(1.05);
+}
+
+button:active,
+.edit-btn:active,
+.borrow-button:active,
+.return-button:active {
+    transform: scale(0.97);
+}
+
+/* Form inputs */
+.admin-form input,
+.book-search input {
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.admin-form input:focus,
+.book-search input:focus {
+    border-color: #ff852e;
+    box-shadow: 0 0 0 4px rgba(255, 133, 46, 0.13);
+}
+
+/* Dashboard panels */
+.welcome-panel,
+.student-profile,
+.student-actions {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.welcome-panel:hover,
+.student-profile:hover,
+.student-actions:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(80, 55, 35, 0.09);
+}
+
+/* Logout hover */
+.logout-link,
+.student-logout {
+    transition: all 0.3s ease;
+}
+
+.logout-link:hover,
+.student-logout:hover {
+    transform: translateX(4px);
+    color: #ff9a45;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* =========================================
+   AZHAR BOOKVERSE - ANIMATION PACK 2
+========================================= */
+
+/* 1. Animated orange gradient */
+.student-welcome,
+.admin-header {
+    background-size: 200% 200%;
+    animation: gradientFlow 7s ease infinite;
+}
+
+@keyframes gradientFlow {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 2. Floating book covers */
+.book-cover {
+    overflow: hidden;
+}
+
+.book-cover img {
+    animation: coverFloat 4s ease-in-out infinite;
+}
+
+@keyframes coverFloat {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-7px); }
+}
+
+/* 3. Staggered book card entrance */
+.book-card:nth-child(4n + 1) { animation-delay: 0.1s; }
+.book-card:nth-child(4n + 2) { animation-delay: 0.2s; }
+.book-card:nth-child(4n + 3) { animation-delay: 0.3s; }
+.book-card:nth-child(4n + 4) { animation-delay: 0.4s; }
+
+/* 4. 3D book card hover */
+.book-card {
+    transform-style: preserve-3d;
+    perspective: 900px;
+}
+
+.book-card:hover {
+    transform: translateY(-10px) rotateX(2deg) rotateY(-2deg);
+    box-shadow: 0 20px 35px rgba(240, 100, 25, 0.2);
+}
+
+/* 5. Shining button effect */
+.borrow-button,
+.edit-btn,
+.admin-form button {
+    position: relative;
+    overflow: hidden;
+}
+
+.borrow-button::before,
+.edit-btn::before,
+.admin-form button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        110deg,
+        transparent,
+        rgba(255,255,255,0.4),
+        transparent
+    );
+    transform: skewX(-20deg);
+    transition: left 0.6s ease;
+}
+
+.borrow-button:hover::before,
+.edit-btn:hover::before,
+.admin-form button:hover::before {
+    left: 150%;
+}
+
+/* 6. Animated logo */
+.brand-icon,
+.student-logo {
+    animation: logoPulse 3s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255, 130, 45, 0.25);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(255, 130, 45, 0);
+    }
+}
+
+/* 7. Dashboard statistic cards */
+.stat-card {
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(230, 105, 35, 0.17);
+}
+
+/* 8. Animated table rows */
+.admin-table tbody tr {
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.admin-table tbody tr:hover {
+    transform: scale(1.005);
+    background: #fff0e2;
+}
+
+/* 9. Smooth navigation underline */
+.sidebar-nav a {
+    position: relative;
+}
+
+.sidebar-nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: 16px;
+    width: 0;
+    height: 2px;
+    background: #ff8c38;
+    transition: width 0.3s ease;
+}
+
+.sidebar-nav a:hover::after {
+    width: calc(100% - 32px);
+}
+
+/* 10. Form entrance */
+.admin-form {
+    animation: formAppear 0.7s ease both;
+}
+
+@keyframes formAppear {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* 11. Status badge pulse */
+.status-badge.borrowed {
+    animation: statusPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255, 150, 50, 0); }
+    50%      { box-shadow: 0 0 0 5px rgba(255, 150, 50, 0.12); }
+}
+
+/* 12. Smooth image loading */
+.book-cover img {
+    transition: opacity 0.6s ease, transform 0.5s ease;
+}
+
+/* 13. Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .book-card,
+    .book-cover img,
+    .brand-icon,
+    .student-logo,
+    .status-badge.borrowed,
+    .student-welcome,
+    .admin-header {
+        animation: none !important;
+    }
+}
+
+/* Floating decorative book effect */
+@keyframes floatingBook {
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+    50% {
+        transform: translateY(-16px) rotate(5deg);
+    }
+}
+
+.floating-book {
+    display: inline-block;
+    font-size: 42px;
+    animation: floatingBook 4s ease-in-out infinite;
+}
+
+.floating-book:nth-child(2) {
+    animation-delay: 0.8s;
+}
+
+.floating-book:nth-child(3) {
+    animation-delay: 1.6s;
+}
+
+/* Glass-style dashboard cards */
+.stat-card,
+.student-profile,
+.student-actions {
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(100, 55, 25, 0.07);
+    transition: transform 0.35s ease,
+                box-shadow 0.35s ease;
+}
+
+.stat-card:hover,
+.student-profile:hover,
+.student-actions:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 35px rgba(237, 91, 11, 0.14);
+}
+/* =================================
+   GLASSMORPHISM EFFECT
+================================= */
+
+.admin-page .ab-stat,
+.admin-page .ab-action {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 20px;
+
+    box-shadow: 0 8px 32px rgba(70, 45, 20, 0.10);
+
+    transition: all 0.35s ease;
+}
+
+/* Glass hover effect */
+.admin-page .ab-stat:hover,
+.admin-page .ab-action:hover {
+    transform: translateY(-7px);
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 15px 35px rgba(70, 45, 20, 0.16);
+}
+
+/* =====================================
+   AZHAR BOOKVERSE - VISIBLE GLASS EFFECT
+===================================== */
+
+/* Dashboard background */
+body.admin-page.ab-admin {
+    background: linear-gradient(
+        135deg,
+        #fff4e8,
+        #f9e5d2,
+        #fffaf4
+    ) !important;
+}
+
+/* Statistics glass cards */
+body.admin-page.ab-admin .ab-stat {
+    background: rgba(255, 255, 255, 0.38) !important;
+    backdrop-filter: blur(18px) saturate(160%) !important;
+    -webkit-backdrop-filter: blur(18px) saturate(160%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.85) !important;
+    box-shadow: 0 8px 32px rgba(100, 65, 35, 0.13) !important;
+    border-radius: 20px !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Quick action glass cards */
+body.admin-page.ab-admin .ab-action {
+    background: rgba(255, 255, 255, 0.38) !important;
+    backdrop-filter: blur(18px) saturate(160%) !important;
+    -webkit-backdrop-filter: blur(18px) saturate(160%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.85) !important;
+    box-shadow: 0 8px 32px rgba(100, 65, 35, 0.13) !important;
+    border-radius: 20px !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover animation */
+body.admin-page.ab-admin .ab-stat:hover,
+body.admin-page.ab-admin .ab-action:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(100, 65, 35, 0.2) !important;
+    background: rgba(255, 255, 255, 0.58) !important;
+}
+/* ==========================================
+   AZHAR BOOKVERSE - DARK / LIGHT MODE
+========================================== */
+
+/* Theme switching button */
+#azharThemeToggle {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 99999;
+
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    background: linear-gradient(135deg, #ff8a32, #e85d04);
+
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#azharThemeToggle:hover {
+    transform: translateY(-5px) rotate(12deg);
+    box-shadow: 0 10px 28px rgba(232, 93, 4, 0.35);
+}
+
+/* Smooth theme transition */
+body,
+body * {
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+/* ==========================================
+   DARK MODE
+========================================== */
+
+html[data-theme="dark"] body {
+    background: #151923 !important;
+    color: #f1f2f5 !important;
+}
+
+/* Main content areas */
+html[data-theme="dark"] .admin-content,
+html[data-theme="dark"] .student-main,
+html[data-theme="dark"] main,
+html[data-theme="dark"] .content,
+html[data-theme="dark"] .page-content {
+    background-color: #151923 !important;
+    color: #f1f2f5 !important;
+}
+
+/* Cards and panels */
+html[data-theme="dark"] .stat-card,
+html[data-theme="dark"] .ab-stat,
+html[data-theme="dark"] .ab-action,
+html[data-theme="dark"] .action-card,
+html[data-theme="dark"] .welcome-panel,
+html[data-theme="dark"] .ab-hero,
+html[data-theme="dark"] .student-profile,
+html[data-theme="dark"] .student-actions,
+html[data-theme="dark"] .book-card,
+html[data-theme="dark"] .table-container,
+html[data-theme="dark"] .form-container,
+html[data-theme="dark"] .profile-card {
+    background: rgba(39, 45, 59, 0.96) !important;
+    color: #f1f2f5 !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Headings and paragraphs */
+
+
+/* Inputs and text areas */
+html[data-theme="dark"] input,
+html[data-theme="dark"] select,
+html[data-theme="dark"] textarea {
+    background: #202735 !important;
+    color: #ffffff !important;
+    border: 1px solid #495366 !important;
+}
+
+html[data-theme="dark"] input::placeholder,
+html[data-theme="dark"] textarea::placeholder {
+    color: #aab2c0 !important;
+}
+
+/* Tables */
+html[data-theme="dark"] table {
+    color: #f1f2f5 !important;
+}
+
+html[data-theme="dark"] table td {
+    border-color: #414a5b !important;
+}
+
+/* Student and admin navigation */
+html[data-theme="dark"] .student-sidebar,
+html[data-theme="dark"] .sidebar,
+html[data-theme="dark"] .ab-sidebar {
+    background: #10141d !important;
+}
+
+/* Links */
+ 
+
+/* Keep orange buttons readable */
+html[data-theme="dark"] button,
+html[data-theme="dark"] .ab-hero-button,
+html[data-theme="dark"] .btn {
+    color: #ffffff;
+}
+
+/* Keep the theme button orange */
+html[data-theme="dark"] #azharThemeToggle {
+    background: linear-gradient(135deg, #ff8a32, #e85d04);
+}
+
+/* Accessibility: disable transitions for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    body,
+    body * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* ==========================================
+   AZHAR BOOKVERSE - DARK MODE TEXT FIX
+========================================== */
+
+/* General dark-mode text */
+html[data-theme="dark"] body {
+    color: #f1f2f5 !important;
+}
+
+/* Headings and normal text */
+html[data-theme="dark"] body h1,
+html[data-theme="dark"] body h2,
+html[data-theme="dark"] body h3,
+html[data-theme="dark"] body h4,
+html[data-theme="dark"] body p,
+html[data-theme="dark"] body label,
+html[data-theme="dark"] body small,
+html[data-theme="dark"] body td,
+html[data-theme="dark"] body th {
+    color: #f1f2f5 !important;
+}
+
+/* Login cards and form panels */
+html[data-theme="dark"] .login-card,
+html[data-theme="dark"] .login-box,
+html[data-theme="dark"] .login-container,
+html[data-theme="dark"] .auth-card,
+html[data-theme="dark"] .admin-login-card,
+html[data-theme="dark"] .form-container,
+html[data-theme="dark"] .form-card {
+    background: #252c3a !important;
+    color: #f1f2f5 !important;
+    border-color: #414b5d !important;
+}
+
+/* Table containers */
+html[data-theme="dark"] .table-container {
+    background: #252c3a !important;
+}
+
+/* Table headings - dark background, readable text */
+html[data-theme="dark"] table thead,
+html[data-theme="dark"] table thead tr,
+html[data-theme="dark"] table th {
+    background: #343d4e !important;
+    color: #ffffff !important;
+}
+
+/* Table rows */
+html[data-theme="dark"] table tbody tr {
+    background: #252c3a !important;
+    color: #f1f2f5 !important;
+}
+
+html[data-theme="dark"] table tbody td {
+    color: #f1f2f5 !important;
+    border-color: #414b5d !important;
+}
+
+/* Form fields */
+html[data-theme="dark"] input,
+html[data-theme="dark"] select,
+html[data-theme="dark"] textarea {
+    background: #202735 !important;
+    color: #ffffff !important;
+    border-color: #566176 !important;
+}
+
+html[data-theme="dark"] input::placeholder,
+html[data-theme="dark"] textarea::placeholder {
+    color: #b7c0cf !important;
+}
+
+/* Links */
+html[data-theme="dark"] body a {
+    color: #ffad70;
+}
+
+/* Orange buttons */
+html[data-theme="dark"] .ab-hero-button,
+html[data-theme="dark"] .edit-btn,
+html[data-theme="dark"] .delete-btn,
+html[data-theme="dark"] .logout-link,
+html[data-theme="dark"] button:not(#azharThemeToggle),
+html[data-theme="dark"] .btn {
+    color: #ffffff !important;
+}
+
+/* Sidebar */
+html[data-theme="dark"] .sidebar,
+html[data-theme="dark"] .ab-sidebar,
+html[data-theme="dark"] .student-sidebar {
+    background: #10141d !important;
+}
+
+/* Keep orange theme switch */
+html[data-theme="dark"] #azharThemeToggle {
+    color: #ffffff !important;
+}
+
+/* =========================================
+   ADMIN LOGIN - DARK MODE FIX
+========================================= */
+
+/* Login page background */
+html[data-theme="dark"] body.admin-login-page,
+html[data-theme="dark"] body.admin-login,
+html[data-theme="dark"] body:has(.admin-login-card) {
+    background: #151923 !important;
+    color: #ffffff !important;
+}
+
+/* Login form card */
+html[data-theme="dark"] body:has(.admin-login-card) .admin-login-card,
+html[data-theme="dark"] body:has(.admin-login-card) .login-card,
+html[data-theme="dark"] body:has(.admin-login-card) .login-box {
+    background: #252c3a !important;
+    color: #ffffff !important;
+    border: 1px solid #414b5d !important;
+}
+
+/* All text inside the login form */
+html[data-theme="dark"] body:has(.admin-login-card) .admin-login-card *,
+html[data-theme="dark"] body:has(.admin-login-card) .login-card *,
+html[data-theme="dark"] body:has(.admin-login-card) .login-box * {
+    color: #f1f2f5;
+}
+
+/* Inputs */
+html[data-theme="dark"] body:has(.admin-login-card) input {
+    background: #171e2b !important;
+    color: #ffffff !important;
+    border: 1px solid #566176 !important;
+}
+
+/* Keep login button orange */
+html[data-theme="dark"] body:has(.admin-login-card) button {
+    background: linear-gradient(135deg, #ff8a32, #e85d04) !important;
+    color: #ffffff !important;
+}
+
+/* Header brand button */
+html[data-theme="dark"] .ab-date {
+    background: #252c3a !important;
+    color: #ffffff !important;
+    border: 1px solid #414b5d !important;
+}
+
+html[data-theme="dark"] .ab-date span,
+html[data-theme="dark"] .ab-date strong {
+    color: #ffffff !important;
+}
+
+/* ==========================================
+   AZHAR BOOKVERSE - ADMIN LOGIN DARK MODE
+   Uses the actual HTML classes
+========================================== */
+
+/* Login page background */
+html[data-theme="dark"] body.auth-page.ab-login {
+    background: #151923 !important;
+    color: #f1f2f5 !important;
+}
+
+/* Login background decoration */
+html[data-theme="dark"] .ab-login-bg {
+    background: #151923 !important;
+}
+
+/* Main login card */
+html[data-theme="dark"] .ab-login-card {
+    background: #252c3a !important;
+    color: #f1f2f5 !important;
+    border: 1px solid #414b5d !important;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* All login card text */
+html[data-theme="dark"] .ab-login-card h2,
+html[data-theme="dark"] .ab-login-card p,
+html[data-theme="dark"] .ab-login-card label,
+html[data-theme="dark"] .ab-login-card span {
+    color: #f1f2f5 !important;
+}
+
+/* Administration portal label */
+html[data-theme="dark"] .ab-login-card .ab-eyebrow {
+    color: #ff984d !important;
+}
+
+/* Login icon */
+html[data-theme="dark"] .ab-login-icon {
+    background: #453124 !important;
+    color: #ff984d !important;
+}
+
+/* Input fields */
+html[data-theme="dark"] .ab-login-card input {
+    background: #171e2b !important;
+    color: #ffffff !important;
+    border: 1px solid #566176 !important;
+}
+
+/* Input placeholder */
+html[data-theme="dark"] .ab-login-card input::placeholder {
+    color: #b7c0cf !important;
+    opacity: 1;
+}
+
+/* Input focus */
+html[data-theme="dark"] .ab-login-card input:focus {
+    border-color: #ff8a32 !important;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 138, 50, 0.18);
+}
+
+/* Sign in button */
+html[data-theme="dark"] .ab-login-card .ab-login-button {
+    background: linear-gradient(135deg, #ff8a32, #e85d04) !important;
+    color: #ffffff !important;
+}
+
+/* Back to student login */
+html[data-theme="dark"] .ab-login-card .ab-back-link {
+    color: #ffad70 !important;
+}
+
+/* Error message */
+html[data-theme="dark"] .ab-login-card .ab-error {
+    background: #492b31 !important;
+    color: #ffb6b6 !important;
+}
+
+/* Brand heading */
+html[data-theme="dark"] .ab-login-brand h1 {
+    color: #ffffff !important;
+}
+
+html[data-theme="dark"] .ab-login-brand h1 span {
+    color: #ff8a32 !important;
+}
+
+html[data-theme="dark"] .ab-login-brand p {
+    color: #d5d9e2 !important;
+}
+
+/* Footer */
+html[data-theme="dark"] .ab-login-footer {
+    color: #b7c0cf !important;
+}

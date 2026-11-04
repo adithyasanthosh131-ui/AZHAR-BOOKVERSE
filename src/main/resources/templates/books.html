@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Books | AZHAR BOOKVERSE</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body class="student-dashboard">
+
+<header class="student-header">
+    <div class="student-brand">
+        <div class="student-logo">AB</div>
+        <div>
+            <h2>AZHAR <span>BOOKVERSE</span></h2>
+            <small>YOUR CAMPUS. YOUR KNOWLEDGE. YOUR WORLD.</small>
+        </div>
+    </div>
+    <nav class="student-nav">
+        <a th:href="@{/dashboard}">Dashboard</a>
+        <a th:href="@{/my-books}">My Books</a>
+        <a th:href="@{/logout}" class="student-logout">Logout →</a>
+    </nav>
+</header>
+
+<main class="student-main">
+
+    <section class="student-welcome">
+        <p>STUDENT BOOK CATALOGUE</p>
+        <h1>Explore Books</h1>
+        <p>Find your next favourite book in your college library.</p>
+    </section>
+
+    <section class="catalogue-section">
+
+        <form method="get" th:action="@{/books}" class="book-search">
+            <input type="text"
+                   name="keyword"
+                   th:value="${keyword}"
+                   placeholder="Search by book title or author...">
+            <button type="submit">Search Books</button>
+            <a th:href="@{/books}" class="clear-search">Clear</a>
+        </form>
+
+        <p class="book-message"
+           th:if="${param.error != null and param.error[0] == 'unavailable'}">
+            Sorry, this book is currently unavailable.
+        </p>
+
+        
+<div class="book-grid" th:if="${!#lists.isEmpty(books)}">
+
+    <article class="book-card"
+         th:each="book : ${books}"
+         th:attr="data-title=${book.title}, data-author=${book.author}">
+
+        <div class="book-cover">
+    <img class="book-cover-image"
+         alt="Book cover"
+         style="display: none;">
+
+    <span class="book-cover-placeholder">📚</span>
+</div>
+
+        <div class="book-info">
+
+            <span class="book-category"
+                  th:text="${book.category}">Category</span>
+
+            <h3 th:text="${book.title}">Book Title</h3>
+
+            <p class="book-author">
+                By <span th:text="${book.author}">Author</span>
+            </p>
+
+            <p class="book-availability">
+                Available copies:
+                <strong th:text="${book.availableCopies}">0</strong>
+            </p>
+
+            <form th:if="${book.availableCopies != null and book.availableCopies > 0}"
+                  th:action="@{/borrow/{id}(id=${book.id})}"
+                  method="post">
+                <button type="submit" class="borrow-button">
+                    Borrow Book →
+                </button>
+            </form>
+
+            <button th:if="${book.availableCopies == null or book.availableCopies <= 0}"
+                    type="button"
+                    class="borrow-button unavailable-button"
+                    disabled>
+                Currently Unavailable
+            </button>
+
+        </div>
+    </article>
+
+</div>
+
+<div class="empty-books" th:if="${#lists.isEmpty(books)}">
+    <span>📖</span>
+    <h2>No books found</h2>
+    <p>Try another title or author name.</p>
+</div>
+
+    </section>
+</main>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", async function () {
+
+    const books = document.querySelectorAll(".book-card");
+
+    function wait(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function loadBookCover(card) {
+
+        const title = card.dataset.title;
+        const author = card.dataset.author;
+
+        const image = card.querySelector(".book-cover-image");
+        const placeholder = card.querySelector(".book-cover-placeholder");
+
+        try {
+            const params = new URLSearchParams({
+                title: title,
+                author: author,
+                fields: "title,author_name,cover_i",
+                limit: "5"
+            });
+
+            const url = "https://openlibrary.org/search.json?" + params;
+
+            const response = await fetch(url);
+
+            if (!response.ok) return;
+
+            const data = await response.json();
+
+            if (!data.docs || data.docs.length === 0) return;
+
+            const match = data.docs.find(book =>
+                book.cover_i &&
+                book.author_name &&
+                book.author_name.some(name =>
+                    name.toLowerCase().includes(author.toLowerCase()) ||
+                    author.toLowerCase().includes(name.toLowerCase())
+                )
+            );
+
+            if (!match) return;
+
+            image.onload = function () {
+                image.style.display = "block";
+                placeholder.style.display = "none";
+            };
+
+            image.onerror = function () {
+                image.style.display = "none";
+                placeholder.style.display = "block";
+            };
+
+            image.src =
+                "https://covers.openlibrary.org/b/id/" +
+                match.cover_i + "-L.jpg";
+
+        } catch (error) {
+            console.log("Cover unavailable:", title, error);
+        }
+    }
+
+    for (const book of books) {
+        await loadBookCover(book);
+        await wait(1100);
+    }
+
+});
+</script>
+
+<script th:src="@{/js/theme.js}"></script>
+</body>
+</html>
+ 

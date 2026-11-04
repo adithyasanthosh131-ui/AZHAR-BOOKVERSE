@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students | AZHAR BOOKVERSE</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body class="admin-page">
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-icon">AB</div>
+            <h2>AZHAR <span>BOOKVERSE</span></h2>
+            <small>ADMIN PANEL</small>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a th:href="@{/admin/dashboard}">Dashboard</a>
+            <a th:href="@{/admin/books}">Manage Books</a>
+            <a th:href="@{/admin/students}" class="active">Students</a>
+            <a th:href="@{/admin/borrow}">Borrow Records</a>
+            <a th:href="@{/admin/overdue}">Overdue Books</a>
+            <a th:href="@{/admin/reports}">Reports</a>
+        </nav>
+
+        <a th:href="@{/admin/logout}" class="logout-link">Logout</a>
+    </aside>
+
+    <main class="admin-content">
+
+        <header class="admin-header">
+            <div>
+                <span class="eyebrow">MEMBER MANAGEMENT</span>
+                <h1>Registered Students</h1>
+                <p>View all students registered in AZHAR BOOKVERSE.</p>
+            </div>
+        </header>
+
+        <section class="welcome-panel">
+            <h2>Student Directory</h2>
+            <p>
+                Total registered students:
+                <strong th:text="${#lists.size(students)}">0</strong>
+            </p>
+        </section>
+
+        <div class="table-container">
+            <table class="admin-table">
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Student Name</th>
+                        <th>Email</th>
+                        <th>Department</th>
+                        <th>Semester</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr th:each="student : ${students}">
+                        <td th:text="${student.id}"></td>
+                        <td th:text="${student.name}"></td>
+                        <td th:text="${student.email}"></td>
+                        <td th:text="${student.department}"></td>
+                        <td th:text="${student.semester}"></td>
+                        <td>
+                         <a th:href="@{/admin/students/edit/{id}(id=${student.id})}"
+                               class="edit-btn">
+                                        Edit
+                         </a>
+                        </td>
+                    </tr>
+
+                    <tr th:if="${#lists.isEmpty(students)}">
+                        <td colspan="5" class="empty-message">
+                            No students registered yet.
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+        <a th:href="@{/admin/dashboard}" class="back-link">
+            ← Back to Dashboard
+        </a>
+
+    </main>
+<script th:src="@{/js/theme.js}"></script>
+</body>
+</html>

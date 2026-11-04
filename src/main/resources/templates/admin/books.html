@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Books | AZHAR BOOKVERSE</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body class="admin-page">
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-icon">AB</div>
+            <h2>AZHAR <span>BOOKVERSE</span></h2>
+            <small>ADMIN PANEL</small>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a th:href="@{/admin/dashboard}">Dashboard</a>
+            <a th:href="@{/admin/books}" class="active">Manage Books</a>
+            <a th:href="@{/admin/students}">Students</a>
+            <a th:href="@{/admin/borrow}">Borrow Records</a>
+            <a th:href="@{/admin/overdue}">Overdue Books</a>
+            <a th:href="@{/admin/reports}">Reports</a>
+        </nav>
+
+        <a th:href="@{/admin/logout}" class="logout-link">Logout</a>
+    </aside>
+
+    <main class="admin-content">
+
+        <header class="admin-header">
+            <div>
+                <span class="eyebrow">LIBRARY COLLECTION</span>
+                <h1>Manage Books</h1>
+                <p>Add, update and manage library books.</p>
+            </div>
+
+            <a th:href="@{/admin/books/new}" class="primary-btn">
+                + Add New Book
+            </a>
+        </header>
+
+        <div class="welcome-panel">
+            <h2>Book Collection</h2>
+            <p>Manage all books available in AZHAR BOOKVERSE.</p>
+        </div>
+
+        <p class="error-message"
+           th:if="${param.error}"
+           th:text="'This book cannot be deleted because it has borrowing history.'">
+        </p>
+
+        <div class="table-container">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Book</th>
+                        <th>Author</th>
+                        <th>Category</th>
+                        <th>Total Copies</th>
+                        <th>Available</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr th:each="book : ${books}">
+                        <td th:text="${book.id}"></td>
+
+                        <td>
+                            <div class="book-info">
+                                <img th:if="${book.imageUrl != null
+                                             and !#strings.isEmpty(book.imageUrl)}"
+                                     th:src="${book.imageUrl}"
+                                     alt="Book cover">
+
+                                <span th:text="${book.title}"></span>
+                            </div>
+                        </td>
+
+                        <td th:text="${book.author}"></td>
+                        <td th:text="${book.category}"></td>
+                        <td th:text="${book.totalCopies}"></td>
+                        <td th:text="${book.availableCopies}"></td>
+
+                        <td>
+                            <div class="table-actions">
+                                <a th:href="@{/admin/books/edit/{id}(id=${book.id})}"
+                                   class="edit-btn">Edit</a>
+
+                                <form th:action="@{/admin/books/delete/{id}(id=${book.id})}"
+                                      method="post"
+                                      onsubmit="return confirm('Delete this book?');">
+
+                                    <button type="submit" class="delete-btn">
+                                        Delete
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr th:if="${#lists.isEmpty(books)}">
+                        <td colspan="7" class="empty-message">
+                            No books have been added yet.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <a th:href="@{/admin/dashboard}" class="back-link">
+            ← Back to Dashboard
+        </a>
+
+    </main>
+<script th:src="@{/js/theme.js}"></script>
+</body>
+</html>

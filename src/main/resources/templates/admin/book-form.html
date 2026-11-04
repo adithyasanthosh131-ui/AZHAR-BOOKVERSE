@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Form | AZHAR BOOKVERSE</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body class="admin-page">
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-icon">AB</div>
+            <h2>AZHAR <span>BOOKVERSE</span></h2>
+            <small>ADMIN PANEL</small>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a th:href="@{/admin/dashboard}">Dashboard</a>
+            <a th:href="@{/admin/books}" class="active">Manage Books</a>
+            <a th:href="@{/admin/students}">Students</a>
+            <a th:href="@{/admin/borrow}">Borrow Records</a>
+            <a th:href="@{/admin/overdue}">Overdue Books</a>
+            <a th:href="@{/admin/reports}">Reports</a>
+        </nav>
+
+        <a th:href="@{/admin/logout}" class="logout-link">Logout</a>
+    </aside>
+
+    <main class="admin-content">
+
+        <header class="admin-header">
+            <div>
+                <span class="eyebrow">BOOK COLLECTION</span>
+                <h1 th:text="${pageTitle}">Add New Book</h1>
+                <p>Enter the book details below.</p>
+            </div>
+        </header>
+
+        <section class="form-panel">
+
+            <p class="error-message"
+               th:if="${error}"
+               th:text="${error}"></p>
+
+            <form th:action="@{/admin/books/save}"
+                  th:object="${book}"
+                  method="post">
+
+                <input type="hidden" th:field="*{id}">
+
+                <label>Book Title</label>
+                <input type="text"
+                       th:field="*{title}"
+                       placeholder="Enter book title"
+                       required>
+
+                <label>Author</label>
+                <input type="text"
+                       th:field="*{author}"
+                       placeholder="Enter author name"
+                       required>
+
+                <label>Category</label>
+                <input type="text"
+                       th:field="*{category}"
+                       placeholder="Example: Fiction, Science, Technology"
+                       required>
+
+                <label>Book Cover Image URL</label>
+                <input type="url"
+                       th:field="*{imageUrl}"
+                       placeholder="Paste image URL">
+
+                <label>Total Copies</label>
+                <input type="number"
+                       th:field="*{totalCopies}"
+                       min="0"
+                       placeholder="Enter number of copies"
+                       required>
+
+                <button type="submit" class="primary-btn">
+                    Save Book
+                </button>
+
+                <a th:href="@{/admin/books}" class="back-link">
+                    Cancel and Go Back
+                </a>
+
+            </form>
+
+        </section>
+
+    </main>
+<script th:src="@{/js/theme.js}"></script>
+</body>
+</html>

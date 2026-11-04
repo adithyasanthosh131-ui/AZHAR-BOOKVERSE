@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard | AZHAR BOOKVERSE</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body class="student-dashboard">
+
+<header class="student-header">
+    <div class="student-brand">
+        <div class="student-logo">AB</div>
+        <div>
+            <h2>AZHAR <span>BOOKVERSE</span></h2>
+            <small>YOUR CAMPUS. YOUR KNOWLEDGE. YOUR WORLD.</small>
+        </div>
+    </div>
+
+    <a th:href="@{/logout}" class="student-logout">Logout →</a>
+</header>
+
+<main class="student-main">
+
+    <section class="student-welcome">
+        <p>STUDENT PORTAL</p>
+        <h1>Welcome, <span th:text="${name}">Student</span>!</h1>
+        <p>Your learning journey continues here. Explore books and discover knowledge.</p>
+    </section>
+
+    <section class="student-profile">
+        <h2>My Profile</h2>
+
+        <div class="profile-details">
+            <div>
+                <small>Full Name</small>
+                <p th:text="${student.name}"></p>
+            </div>
+
+            <div>
+                <small>Email Address</small>
+                <p th:text="${student.email}"></p>
+            </div>
+
+            <div>
+                <small>Department</small>
+                <p th:text="${student.department}"></p>
+            </div>
+
+            <div>
+                <small>Semester</small>
+                <p th:text="${student.semester}"></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="student-actions">
+        <h2>My Library</h2>
+
+        <div class="student-action-grid">
+
+            <a th:href="@{/books}" class="student-action-card">
+                <span>📚</span>
+                <h3>Explore Books</h3>
+                <p>Discover books available in your college library.</p>
+                <strong>Browse Books →</strong>
+            </a>
+
+            <a th:href="@{/my-books}" class="student-action-card">
+                <span>📖</span>
+                <h3>My Books</h3>
+                <p>View your borrowed books and their due dates.</p>
+                <strong>View My Books →</strong>
+            </a>
+
+        </div>
+    </section>
+
+</main>
+
+<footer class="auth-footer">
+    © 2026 AZHAR BOOKVERSE. Read. Learn. Grow.
+</footer>
+<script th:src="@{/js/theme.js}"></script>
+</body>
+</html>

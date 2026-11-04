@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Books | AZHAR BOOKVERSE</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body class="student-dashboard">
+
+<header class="student-header">
+    <div class="student-brand">
+        <div class="student-logo">AB</div>
+        <div>
+            <h2>AZHAR <span>BOOKVERSE</span></h2>
+            <small>YOUR CAMPUS. YOUR KNOWLEDGE. YOUR WORLD.</small>
+        </div>
+    </div>
+
+    <nav class="student-nav">
+        <a th:href="@{/dashboard}">Dashboard</a>
+        <a th:href="@{/books}">Explore Books</a>
+        <a th:href="@{/logout}" class="student-logout">Logout →</a>
+    </nav>
+</header>
+
+<main class="student-main">
+
+    <section class="student-welcome">
+        <p>YOUR READING ACTIVITY</p>
+        <h1>My Books</h1>
+        <p>Keep track of the books you have borrowed and their due dates.</p>
+    </section>
+
+    <section class="catalogue-section">
+
+        <div class="borrowed-list"
+             th:if="${!#lists.isEmpty(records)}">
+
+            <article class="borrowed-card" th:each="record : ${records}">
+
+                <div class="borrowed-book-icon">📖</div>
+
+                <div class="borrowed-book-info">
+                    <h3 th:text="${record.book.title}">Book Title</h3>
+
+                    <p>
+                        Author:
+                        <span th:text="${record.book.author}">Author</span>
+                    </p>
+
+                    <p>
+                        Borrowed:
+                        <span th:text="${record.issueDate}">Issue date</span>
+                    </p>
+
+                    <p>
+                        Due date:
+                        <strong th:text="${record.dueDate}">Due date</strong>
+                    </p>
+
+                    <span class="borrow-status"
+                          th:text="${record.status}"
+                          th:classappend="${record.status == 'RETURNED'} ? ' returned-status' : ''">
+                        BORROWED
+                    </span>
+                </div>
+
+                <form th:if="${record.status == 'BORROWED'}"
+                      th:action="@{/return/{id}(id=${record.id})}"
+                      method="post">
+                    <button type="submit" class="return-button">
+                        Return Book
+                    </button>
+                </form>
+
+            </article>
+        </div>
+
+        <div class="empty-books" th:if="${#lists.isEmpty(records)}">
+            <span>📚</span>
+            <h2>You haven't borrowed any books yet</h2>
+            <p>Explore the catalogue and find a book to read.</p>
+            <a th:href="@{/books}" class="catalogue-link">
+                Explore Books →
+            </a>
+        </div>
+
+    </section>
+
+</main>
+<script th:src="@{/js/theme.js}"></script>
+</body>
+</html>

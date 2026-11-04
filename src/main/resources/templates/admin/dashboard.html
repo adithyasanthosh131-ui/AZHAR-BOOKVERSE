@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | AZHAR BOOKVERSE</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body class="admin-page ab-admin">
+
+<aside class="sidebar ab-sidebar">
+
+    <div class="sidebar-brand ab-sidebar-brand">
+        <div class="brand-icon ab-logo">AB</div>
+        <h2>AZHAR <span>BOOKVERSE</span></h2>
+        <small>ADMINISTRATION</small>
+    </div>
+
+    <div class="ab-nav-label">MAIN MENU</div>
+
+    <nav class="sidebar-nav ab-nav">
+
+        <a th:href="@{/admin/dashboard}" class="active">
+            <span>▦</span> Dashboard
+        </a>
+
+        <a th:href="@{/admin/books}">
+            <span>▤</span> Manage Books
+        </a>
+
+        <a th:href="@{/admin/students}">
+            <span>♙</span> Students
+        </a>
+
+        <a th:href="@{/admin/borrow}">
+            <span>⇄</span> Borrow Records
+        </a>
+
+        <a th:href="@{/admin/overdue}">
+            <span>◷</span> Overdue Books
+        </a>
+
+        <a th:href="@{/admin/reports}">
+            <span>▥</span> Reports
+        </a>
+
+    </nav>
+
+    <div class="ab-sidebar-bottom">
+        <div class="ab-admin-mini">
+            <div class="ab-avatar">A</div>
+            <div>
+                <strong>Administrator</strong>
+                <small>Library Admin</small>
+            </div>
+        </div>
+
+        <a th:href="@{/admin/logout}" class="logout-link">
+            ↪ Logout
+        </a>
+    </div>
+
+</aside>
+
+<main class="admin-content ab-main">
+
+    <header class="admin-header ab-header">
+        <div>
+            <span class="ab-eyebrow">OVERVIEW / DASHBOARD</span>
+            <h1>Welcome Back, Admin! 👋</h1>
+            <p>Here's what's happening in your library today.</p>
+        </div>
+
+        <div class="ab-header-right">
+            <div class="ab-date">
+                <span>📚</span> AZHAR BOOKVERSE
+            </div>
+            <div class="admin-avatar ab-avatar">A</div>
+        </div>
+    </header>
+
+    <section class="welcome-panel ab-hero">
+
+        <div class="ab-hero-text">
+            <span class="ab-hero-tag">✦ YOUR LIBRARY AT A GLANCE</span>
+
+            <h2>Knowledge Begins<br>With a <span>Single Page.</span></h2>
+
+            <p>
+                Manage your books, students and library activities
+                from one beautiful workspace.
+            </p>
+
+            <a th:href="@{/admin/books}" class="ab-hero-button">
+                Explore Books →
+            </a>
+        </div>
+
+        <div class="ab-hero-image">
+
+    <div class="floating-books">
+        <span class="floating-book">📚</span>
+        <span class="floating-book">📖</span>
+        <span class="floating-book">📕</span>
+    </div>
+
+    <img
+        src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=700"
+        alt="Beautiful library bookshelves">
+
+</div>
+
+    </section>
+
+    <section class="ab-section-heading">
+        <div>
+            <span class="ab-eyebrow">LIBRARY OVERVIEW</span>
+            <h2>Dashboard Statistics</h2>
+        </div>
+        <span class="ab-live">● LIVE OVERVIEW</span>
+    </section>
+
+    <section class="stats-grid ab-stats">
+
+        <div class="stat-card ab-stat">
+            <div class="ab-stat-top">
+                <span>Total Books</span>
+                <div class="ab-stat-icon">▤</div>
+            </div>
+            <h2 th:text="${totalBooks}">0</h2>
+            <p>Books in library collection</p>
+        </div>
+
+        <div class="stat-card ab-stat">
+            <div class="ab-stat-top">
+                <span>Registered Students</span>
+                <div class="ab-stat-icon">♙</div>
+            </div>
+            <h2 th:text="${totalStudents}">0</h2>
+            <p>Registered library members</p>
+        </div>
+
+        <div class="stat-card ab-stat">
+            <div class="ab-stat-top">
+                <span>Borrowed Books</span>
+                <div class="ab-stat-icon">⇄</div>
+            </div>
+            <h2 th:text="${totalBorrowed}">0</h2>
+            <p>Currently with students</p>
+        </div>
+
+        <div class="stat-card ab-stat">
+            <div class="ab-stat-top">
+                <span>Returned Books</span>
+                <div class="ab-stat-icon">✓</div>
+            </div>
+            <h2 th:text="${totalReturned}">0</h2>
+            <p>Successfully returned</p>
+        </div>
+
+        <div class="stat-card ab-stat ab-overdue">
+            <div class="ab-stat-top">
+                <span>Overdue Books</span>
+                <div class="ab-stat-icon">◷</div>
+            </div>
+            <h2 th:text="${totalOverdue}">0</h2>
+            <p>Require return attention</p>
+        </div>
+
+    </section>
+
+    <section class="ab-section-heading">
+        <div>
+            <span class="ab-eyebrow">QUICK NAVIGATION</span>
+            <h2>Manage Your Library</h2>
+        </div>
+    </section>
+
+    <section class="quick-actions ab-actions">
+
+        <a th:href="@{/admin/books}" class="action-card ab-action">
+            <div class="ab-action-icon">📚</div>
+            <h3>Manage Books</h3>
+            <p>Add new books, edit details and manage copies.</p>
+            <span>Explore →</span>
+        </a>
+
+        <a th:href="@{/admin/students}" class="action-card ab-action">
+            <div class="ab-action-icon">🎓</div>
+            <h3>Students</h3>
+            <p>View all registered college library members.</p>
+            <span>Explore →</span>
+        </a>
+
+        <a th:href="@{/admin/borrow}" class="action-card ab-action">
+            <div class="ab-action-icon">📖</div>
+            <h3>Borrow Records</h3>
+            <p>Monitor borrowed books and manage returns.</p>
+            <span>Explore →</span>
+        </a>
+
+        <a th:href="@{/admin/overdue}" class="action-card ab-action">
+            <div class="ab-action-icon">⏰</div>
+            <h3>Overdue Books</h3>
+            <p>Identify books that have passed their due date.</p>
+            <span>Explore →</span>
+        </a>
+
+        <a th:href="@{/admin/reports}" class="action-card ab-action">
+            <div class="ab-action-icon">📊</div>
+            <h3>Library Reports</h3>
+            <p>Review library activity and statistics.</p>
+            <span>Explore →</span>
+        </a>
+
+    </section>
+
+    <footer class="ab-footer">
+        © 2026 AZHAR BOOKVERSE. All rights reserved.
+        <span>Made for Readers ♥</span>
+    </footer>
+
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("[data-count]").forEach(element => {
+        const target = Number(element.dataset.count);
+        const duration = 1400;
+        const start = performance.now();
+
+        function animate(now) {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+
+            element.textContent =
+                Math.round(target * eased);
+
+            if (progress < 1) {
+                requestAnimationFrame(animate);
+            }
+        }
+
+        requestAnimationFrame(animate);
+    });
+});
+</script>
+<script th:src="@{/js/theme.js}"></script>
+</body>
+</html>

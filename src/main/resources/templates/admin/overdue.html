@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overdue Books | AZHAR BOOKVERSE</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body class="admin-page">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+            <div class="brand-icon">AB</div>
+            <h2>AZHAR <span>BOOKVERSE</span></h2>
+            <small>ADMIN PANEL</small>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a th:href="@{/admin/dashboard}">Dashboard</a>
+            <a th:href="@{/admin/books}">Manage Books</a>
+            <a th:href="@{/admin/students}">Students</a>
+            <a th:href="@{/admin/borrow}">Borrow Records</a>
+            <a th:href="@{/admin/overdue}" class="active">Overdue Books</a>
+            <a th:href="@{/admin/reports}">Reports</a>
+        </nav>
+
+        <a th:href="@{/admin/logout}" class="logout-link">Logout</a>
+
+    </aside>
+
+    <main class="admin-content">
+
+        <header class="admin-header">
+            <div>
+                <span class="eyebrow">RETURN MONITORING</span>
+                <h1>Overdue Books</h1>
+                <p>Track books that have passed their due dates.</p>
+            </div>
+        </header>
+
+        <section class="welcome-panel overdue-card">
+            <h2>Overdue Book Records</h2>
+            <p>
+                Books listed here have not been returned by their due dates.
+            </p>
+            <h2 th:text="${#lists.size(records)}">0</h2>
+            <span>Currently overdue</span>
+        </section>
+
+        <div class="table-container">
+
+            <table class="admin-table">
+
+                <thead>
+                    <tr>
+                        <th>Record ID</th>
+                        <th>Student Name</th>
+                        <th>Book Title</th>
+                        <th>Issue Date</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr th:each="record : ${records}">
+
+                        <td th:text="${record.id}"></td>
+
+                        <td th:text="${record.student.name}"></td>
+
+                        <td th:text="${record.book.title}"></td>
+
+                        <td th:text="${record.issueDate}"></td>
+
+                        <td th:text="${record.dueDate}"></td>
+
+                        <td>
+                            <span class="status-badge overdue">
+                                OVERDUE
+                            </span>
+                        </td>
+
+                    </tr>
+
+                    <tr th:if="${#lists.isEmpty(records)}">
+                        <td colspan="6" class="empty-message">
+                            No overdue books. All books are within their due dates!
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <a th:href="@{/admin/dashboard}" class="back-link">
+            ← Back to Dashboard
+        </a>
+
+    </main>
+<script th:src="@{/js/theme.js}"></script>
+</body>
+</html>
